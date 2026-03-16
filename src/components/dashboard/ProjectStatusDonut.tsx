@@ -136,7 +136,7 @@ export default function ProjectStatusDonut() {
 
       <div className="flex items-center gap-6 justify-center">
         {/* Donut */}
-        <div className="relative flex-shrink-0">
+        <div className="relative shrink-0">
           <svg ref={svgRef} />
           {tooltip && (
             <div
@@ -156,7 +156,7 @@ export default function ProjectStatusDonut() {
           {slices.map((s) => (
             <li key={s.status} className="flex items-center gap-2.5">
               <span
-                className="w-2.5 h-2.5 rounded-full flex-shrink-0"
+                className="w-2.5 h-2.5 rounded-full shrink-0"
                 style={{ backgroundColor: s.color }}
               />
               <span className="text-xs text-gray-600 flex-1">{s.status}</span>
