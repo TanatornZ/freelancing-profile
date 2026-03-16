@@ -23,7 +23,7 @@ export default function ActivityFeed() {
           return (
             <li key={activity.id} className="flex items-start gap-3">
               <div
-                className={`w-8 h-8 rounded-xl ${style.bg} flex items-center justify-center flex-shrink-0 text-sm`}
+                className={`w-8 h-8 rounded-xl ${style.bg} flex items-center justify-center shrink-0 text-sm`}
               >
                 {style.emoji}
               </div>
@@ -35,7 +35,7 @@ export default function ActivityFeed() {
                   {activity.description}
                 </p>
               </div>
-              <span className="text-[11px] text-gray-400 flex-shrink-0 mt-0.5 whitespace-nowrap">
+              <span className="text-[11px] text-gray-400 shrink-0 mt-0.5 whitespace-nowrap">
                 {activity.time}
               </span>
             </li>

@@ -41,7 +41,7 @@ export default function InvoiceList() {
             key={inv.id}
             className="flex items-center gap-3 px-5 py-3 hover:bg-gray-50/70 transition-colors cursor-pointer"
           >
-            <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500 text-xs font-bold flex-shrink-0">
+            <div className="w-8 h-8 rounded-lg bg-slate-100 flex items-center justify-center text-slate-500 text-xs font-bold shrink-0">
               {inv.id.split('-')[1]}
             </div>
             <div className="flex-1 min-w-0">

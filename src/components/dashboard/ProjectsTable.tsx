@@ -72,7 +72,7 @@ export default function ProjectsTable() {
                 <td className="px-5 py-3.5">
                   <div className="flex items-center gap-2.5">
                     <span
-                      className={`w-2 h-2 rounded-full flex-shrink-0 ${priorityDot[project.priority]}`}
+                      className={`w-2 h-2 rounded-full shrink-0 ${priorityDot[project.priority]}`}
                       title={`${project.priority} priority`}
                     />
                     <div>
@@ -102,7 +102,7 @@ export default function ProjectsTable() {
                 {/* Progress bar */}
                 <td className="px-5 py-3.5">
                   <div className="flex items-center gap-2">
-                    <div className="flex-1 bg-gray-100 rounded-full h-1.5 min-w-[60px]">
+                    <div className="flex-1 bg-gray-100 rounded-full h-1.5 min-w-15">
                       <div
                         className={`h-1.5 rounded-full transition-all ${
                           project.progress === 100

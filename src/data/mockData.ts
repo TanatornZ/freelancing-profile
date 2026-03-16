@@ -156,12 +156,26 @@ export const activities: Activity[] = [
 ];
 
 export const monthlyRevenue: MonthlyRevenue[] = [
-  { month: 'Oct', revenue: 9800, expenses: 2100 },
+  { month: 'Apr', revenue: 6200,  expenses: 1600 },
+  { month: 'May', revenue: 8100,  expenses: 1850 },
+  { month: 'Jun', revenue: 7400,  expenses: 1700 },
+  { month: 'Jul', revenue: 10300, expenses: 2200 },
+  { month: 'Aug', revenue: 9100,  expenses: 2000 },
+  { month: 'Sep', revenue: 11800, expenses: 2450 },
+  { month: 'Oct', revenue: 9800,  expenses: 2100 },
   { month: 'Nov', revenue: 12400, expenses: 2800 },
-  { month: 'Dec', revenue: 7200, expenses: 1900 },
+  { month: 'Dec', revenue: 7200,  expenses: 1900 },
   { month: 'Jan', revenue: 15600, expenses: 3200 },
   { month: 'Feb', revenue: 11300, expenses: 2500 },
-  { month: 'Mar', revenue: 9950, expenses: 2200 },
+  { month: 'Mar', revenue: 9950,  expenses: 2200 },
+];
+
+export const earningsByCategory = [
+  { category: 'Web Development', earned: 19800, budget: 22000 },
+  { category: 'Mobile App',      earned: 12000, budget: 12000 },
+  { category: 'UI Design',       earned: 3200,  budget: 5000  },
+  { category: 'Consulting',      earned: 4800,  budget: 6000  },
+  { category: 'SEO / Marketing', earned: 2100,  budget: 3000  },
 ];
 
 export const stats = {

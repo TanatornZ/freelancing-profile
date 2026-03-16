@@ -37,7 +37,7 @@ export default function StatsCard({ title, value, change, icon, iconBg }: StatsC
             <span className="text-xs text-gray-400">vs last month</span>
           </div>
         </div>
-        <div className={`w-11 h-11 rounded-xl ${iconBg} flex items-center justify-center flex-shrink-0`}>
+        <div className={`w-11 h-11 rounded-xl ${iconBg} flex items-center justify-center shrink-0`}>
           {icon}
         </div>
       </div>
