@@ -12,6 +12,7 @@ export default function Home() {
           <CustomLink title="Sign In" href="/signin" />
           <CustomLink title="Log In" href="/login" />
           <CustomLink title="BabyBurger" href="/hamburger" />
+          <CustomLink title="Laptop Store" href="/laptops" />
         </div>
       </div>
     </div>
