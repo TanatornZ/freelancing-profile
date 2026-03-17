@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Dashboard from "./pages/dashboard";
 import Login from "./pages/Login";
 import SignIn from "./pages/SignIn";
+import HamburgerLanding from "./pages/HamburgerLanding";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signin" element={<SignIn />} />
+        <Route path="/hamburger" element={<HamburgerLanding />} />
       </Routes>
     </BrowserRouter>
   );
