@@ -1,4 +1,4 @@
-import { BRANDS, SORT_OPTIONS } from "../../types/laptop.interface";
+import { BRANDS, SORT_OPTIONS } from "../../data/mockLaptopData";
 
 type Props = {
   brand: string;

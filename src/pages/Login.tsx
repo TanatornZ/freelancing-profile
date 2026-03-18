@@ -5,6 +5,7 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const [darkMode, setDarkMode] = useState(true);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -12,17 +13,40 @@ export default function Login() {
     console.log({ email, password });
   };
 
+  const dm = darkMode;
+
   return (
-    <div className="min-h-screen bg-gray-950 flex items-center justify-center px-4">
+    <div className={`min-h-screen ${dm ? "bg-gray-950" : "bg-gray-100"} flex items-center justify-center px-4 transition-colors duration-300`}>
       {/* Background glow */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -left-40 w-96 h-96 bg-violet-600/20 rounded-full blur-3xl" />
-        <div className="absolute -bottom-40 -right-40 w-96 h-96 bg-violet-800/20 rounded-full blur-3xl" />
+        <div className={`absolute -top-40 -left-40 w-96 h-96 ${dm ? "bg-violet-600/20" : "bg-violet-400/20"} rounded-full blur-3xl`} />
+        <div className={`absolute -bottom-40 -right-40 w-96 h-96 ${dm ? "bg-violet-800/20" : "bg-violet-300/30"} rounded-full blur-3xl`} />
       </div>
+
+      {/* Theme toggle */}
+      <button
+        onClick={() => setDarkMode(!darkMode)}
+        className={`absolute top-5 right-5 p-2.5 rounded-xl border transition-all ${
+          dm
+            ? "bg-gray-800 border-gray-700 text-yellow-400 hover:bg-gray-700"
+            : "bg-white border-gray-200 text-gray-700 hover:bg-gray-50 shadow-sm"
+        }`}
+        aria-label="Toggle theme"
+      >
+        {dm ? (
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+            <path d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z" />
+          </svg>
+        ) : (
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5">
+            <path fillRule="evenodd" d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z" clipRule="evenodd" />
+          </svg>
+        )}
+      </button>
 
       <div className="relative w-full max-w-md">
         {/* Card */}
-        <div className="bg-gray-900 border border-gray-800 rounded-2xl p-8 shadow-2xl">
+        <div className={`${dm ? "bg-gray-900 border-gray-800" : "bg-white border-gray-200"} border rounded-2xl p-8 shadow-2xl transition-colors duration-300`}>
           {/* Logo / Header */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center justify-center w-12 h-12 bg-violet-600 rounded-xl mb-4">
@@ -39,8 +63,8 @@ export default function Login() {
                 />
               </svg>
             </div>
-            <h1 className="text-2xl font-bold text-white">Welcome</h1>
-            <p className="text-gray-400 text-sm mt-1">
+            <h1 className={`text-2xl font-bold ${dm ? "text-white" : "text-gray-900"}`}>Welcome</h1>
+            <p className={`${dm ? "text-gray-400" : "text-gray-500"} text-sm mt-1`}>
               Sign in to your account
             </p>
           </div>
@@ -48,7 +72,7 @@ export default function Login() {
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label className="block text-sm font-medium text-gray-300 mb-1.5">
+              <label className={`block text-sm font-medium ${dm ? "text-gray-300" : "text-gray-700"} mb-1.5`}>
                 Email
               </label>
               <input
@@ -57,18 +81,18 @@ export default function Login() {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@example.com"
                 required
-                className="w-full bg-gray-800 border border-gray-700 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/50 text-white placeholder-gray-500 text-sm rounded-xl px-4 py-3 outline-none transition-all"
+                className={`w-full ${dm ? "bg-gray-800 border-gray-700 text-white placeholder-gray-500" : "bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-400"} border focus:border-violet-500 focus:ring-1 focus:ring-violet-500/50 text-sm rounded-xl px-4 py-3 outline-none transition-all`}
               />
             </div>
 
             <div>
               <div className="flex items-center justify-between mb-1.5">
-                <label className="block text-sm font-medium text-gray-300">
+                <label className={`block text-sm font-medium ${dm ? "text-gray-300" : "text-gray-700"}`}>
                   Password
                 </label>
                 <a
                   href="#"
-                  className="text-xs text-violet-400 hover:text-violet-300 transition-colors"
+                  className="text-xs text-violet-500 hover:text-violet-400 transition-colors"
                 >
                   Forgot password?
                 </a>
@@ -80,12 +104,12 @@ export default function Login() {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••"
                   required
-                  className="w-full bg-gray-800 border border-gray-700 focus:border-violet-500 focus:ring-1 focus:ring-violet-500/50 text-white placeholder-gray-500 text-sm rounded-xl px-4 py-3 pr-11 outline-none transition-all"
+                  className={`w-full ${dm ? "bg-gray-800 border-gray-700 text-white placeholder-gray-500" : "bg-gray-50 border-gray-300 text-gray-900 placeholder-gray-400"} border focus:border-violet-500 focus:ring-1 focus:ring-violet-500/50 text-sm rounded-xl px-4 py-3 pr-11 outline-none transition-all`}
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-300 transition-colors"
+                  className={`absolute right-3 top-1/2 -translate-y-1/2 ${dm ? "text-gray-500 hover:text-gray-300" : "text-gray-400 hover:text-gray-600"} transition-colors`}
                 >
                   {showPassword ? (
                     <svg
@@ -128,10 +152,10 @@ export default function Login() {
           {/* Divider */}
           <div className="relative my-6">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-800" />
+              <div className={`w-full border-t ${dm ? "border-gray-800" : "border-gray-200"}`} />
             </div>
             <div className="relative flex justify-center text-xs uppercase">
-              <span className="bg-gray-900 px-3 text-gray-500 tracking-widest">
+              <span className={`${dm ? "bg-gray-900 text-gray-500" : "bg-white text-gray-400"} px-3 tracking-widest`}>
                 or
               </span>
             </div>
@@ -142,7 +166,7 @@ export default function Login() {
             {/* Google */}
             <button
               type="button"
-              className="w-full flex items-center justify-center gap-3 bg-gray-800 hover:bg-gray-700 border border-gray-700 hover:border-gray-600 text-white text-sm font-medium py-3 px-4 rounded-xl transition-all"
+              className={`w-full flex items-center justify-center gap-3 ${dm ? "bg-gray-800 hover:bg-gray-700 border-gray-700 hover:border-gray-600 text-white" : "bg-white hover:bg-gray-50 border-gray-300 hover:border-gray-400 text-gray-800 shadow-sm"} border text-sm font-medium py-3 px-4 rounded-xl transition-all`}
             >
               <svg
                 viewBox="0 0 24 24"
@@ -186,11 +210,11 @@ export default function Login() {
           </div>
 
           {/* Footer */}
-          <p className="text-center text-sm text-gray-500 mt-6">
+          <p className={`text-center text-sm ${dm ? "text-gray-500" : "text-gray-500"} mt-6`}>
             Don't have an account?{" "}
             <Link
               to="/signin"
-              className="text-violet-400 hover:text-violet-300 font-medium transition-colors"
+              className="text-violet-500 hover:text-violet-400 font-medium transition-colors"
             >
               Create one
             </Link>
