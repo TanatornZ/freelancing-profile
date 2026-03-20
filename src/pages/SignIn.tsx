@@ -11,7 +11,6 @@ export default function SignIn() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: handle registration
     console.log({ name, email, password });
   };
 
