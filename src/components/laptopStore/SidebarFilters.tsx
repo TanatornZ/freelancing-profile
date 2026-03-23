@@ -78,6 +78,7 @@ export default function SidebarFilters({
           value={maxPrice}
           onChange={(e) => onMaxPriceChange(Number(e.target.value))}
           className="w-full accent-violet-500"
+          aria-label="filter price"
         />
         <div className="flex justify-between text-xs text-gray-500 mt-1">
           <span>$500</span>

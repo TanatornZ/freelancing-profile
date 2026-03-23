@@ -121,7 +121,7 @@ export default function HamburgerLanding() {
       </nav>
 
       {/* ── HERO ────────────────────────────────────────────── */}
-      <section className="container mx-auto px-6 pt-20 pb-28">
+      <section className="container mx-auto px-6 pt-20 pb-28" role="main">
         <div className="flex flex-col-reverse lg:flex-row items-center gap-12 lg:gap-16">
 
           {/* ── Left: Text ── */}

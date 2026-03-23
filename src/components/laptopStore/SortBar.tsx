@@ -43,6 +43,7 @@ export default function SortBar({
         <select
           value={sort}
           onChange={(e) => onSortChange(e.target.value)}
+          aria-label="Sort laptops"
           className="bg-gray-800 border border-gray-700 text-sm text-gray-300 rounded-xl px-3 py-2 outline-none focus:border-violet-500 transition-all cursor-pointer"
         >
           {SORT_OPTIONS.map((o) => (
@@ -61,6 +62,7 @@ export default function SortBar({
                 ? "bg-violet-600 text-white"
                 : "text-gray-500 hover:text-gray-300"
             }`}
+            aria-label="Grid view"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
@@ -73,6 +75,7 @@ export default function SortBar({
                 ? "bg-violet-600 text-white"
                 : "text-gray-500 hover:text-gray-300"
             }`}
+            aria-label="List view"
           >
             <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
               <path

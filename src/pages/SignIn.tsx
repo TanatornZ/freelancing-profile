@@ -45,7 +45,7 @@ export default function SignIn() {
         )}
       </button>
 
-      <div className="relative w-full max-w-md">
+      <div className="relative w-full max-w-md" role="main">
         {/* Card */}
         <div className={`${dm ? "bg-gray-900 border-gray-800" : "bg-white border-gray-200"} border rounded-2xl p-8 shadow-2xl transition-colors duration-300`}>
           {/* Logo / Header */}
@@ -113,6 +113,7 @@ export default function SignIn() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
+                  aria-label={showPassword ? "Hide password" : "Show password"}
                   className={`absolute right-3 top-1/2 -translate-y-1/2 ${dm ? "text-gray-500 hover:text-gray-300" : "text-gray-400 hover:text-gray-600"} transition-colors`}
                 >
                   {showPassword ? (

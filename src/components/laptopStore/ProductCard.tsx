@@ -34,6 +34,7 @@ export default function ProductCard({ laptop, view, onAddToCart }: Props) {
           ? "border-red-500/50 bg-red-500/10 text-red-400"
           : "border-gray-700 text-gray-500 hover:text-red-400 hover:border-red-500/50"
       } ${className ?? ""}`}
+      aria-label={wishlisted ? `Remove from wishlist ${laptop.name}` : `Add to wishlist ${laptop.name}`}
     >
       <svg
         className="w-4 h-4"
@@ -63,6 +64,7 @@ export default function ProductCard({ laptop, view, onAddToCart }: Props) {
             : "bg-violet-600 hover:bg-violet-500 text-white shadow-md shadow-violet-500/20 hover:shadow-violet-500/40"
           : "bg-gray-800 text-gray-500 cursor-not-allowed"
       } ${className ?? ""}`}
+      aria-label={!laptop.inStock ? "Out of Stock" : added ? `Added ${laptop.name} to Cart` : `Add ${laptop.name} to Cart`}
     >
       {!laptop.inStock ? "Out of Stock" : added ? "✓ Added" : "Add to Cart"}
     </button>
@@ -163,6 +165,7 @@ export default function ProductCard({ laptop, view, onAddToCart }: Props) {
               ? "bg-red-500/20 text-red-400 border border-red-500/40"
               : "bg-gray-900/70 text-gray-400 border border-gray-700/50 opacity-0 group-hover:opacity-100"
           }`}
+          aria-label={wishlisted ? `Remove from wishlist ${laptop.name}` : `Add to wishlist ${laptop.name}`}
         >
           <svg
             className="w-4 h-4"
